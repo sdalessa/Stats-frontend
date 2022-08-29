@@ -6,14 +6,14 @@ import CircleNotificationsIcon from '@mui/icons-material/CircleNotifications';
 
 export default function Topbar() {
   return (
-    <div className="topbarContainer">Topbar
-        <div className="topbarLeft">Search
+    <div className="topbarContainer">.
+        <div className="topbarLeft">.
         <br></br>
-        <span className="logo">SocialMedia</span>
+        <span className="logo">StatsPoster</span>
       </div>
         <div className="topbarCenter">
           <div className="searchbar">
-          <SearchIcon/>
+          <SearchIcon className="searchIcon"/>
           <input 
           placeholder="Search for friends or posts" 
           className="searchinput" 
@@ -22,7 +22,7 @@ export default function Topbar() {
         </div>
         <div className="topbarRight">
           <div className="topbarLinks">
-            <span className="topbarLink">Homepage</span>
+            <span className="topbarLink">Home</span>
             <span className="topbarLink">Timeline</span>
           </div>
           <div className="topbarIcons">
@@ -39,7 +39,7 @@ export default function Topbar() {
               <span className="topbarIconBadge">1</span>
             </div>
           </div>
-          <img src="../../resources/users/ami.jpg" alt="Ami" className="topbarPic" />
+          <img src="../../resources/users/raul.jpg" alt="Raul" className="topbarPic" />
         </div>
     </div>
   )

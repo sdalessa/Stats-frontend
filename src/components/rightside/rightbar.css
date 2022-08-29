@@ -1,0 +1,70 @@
+.rightbar{
+    flex:3.5;
+    height: calc(100vh - 60px);
+    overflow-y: scroll;
+    font-weight: 500;
+}
+
+.rightbarWrapper{
+    margin-top: 10px;
+    padding: 20px 0;
+
+}
+.rightbarListItemText{
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.rightbarListItem{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.rightbarIcon{
+    margin-right: 15px;
+    margin-top: 15px;
+}
+.rightbarTitle{
+    margin-bottom: 20px;
+    padding:30px 5px 5px 5px; 
+}
+
+.rightbarFriendsList{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+.rightbarFriend{
+    display: flex;
+    align-items: center;
+    margin-bottom:  15px;
+}
+
+.rightbarPicContainer{
+    margin-right: 30px;
+    position:relative;
+}
+
+.rightbarProfilePic{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+.righbarOnlineStatus{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgb(15, 159, 15);
+    position:absolute;
+    top: -2px;
+    right: 0;
+    border: 2px solid white;
+}
+.rightbarUsername{
+    font-weight: 500px;
+    
+}
+
