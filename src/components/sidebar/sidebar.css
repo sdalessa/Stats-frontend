@@ -2,6 +2,9 @@
     flex:3;
     height: calc(100vh - 60px);
     overflow-y: scroll;
+    position:sticky;
+    top: 50px;
+
 }
 
 ::-webkit-scrollbar {
@@ -52,7 +55,7 @@
     margin: 0;
     list-style: none;
 }
-
+/* from here it can go into closefriends.css */
 .sidebarFriend{
     display: flex;
     align-items: center;

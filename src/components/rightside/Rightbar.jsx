@@ -1,5 +1,7 @@
 import "./rightbar.css"
 import ScoreboardIcon from '@mui/icons-material/Scoreboard';
+import {Users} from "../../dummyData"
+import Online from "../online/Online"
 
 export default function Rightbar() {
   return (
@@ -29,40 +31,9 @@ export default function Rightbar() {
             </ul>
             <h4 className="rightbarTitle">Friends Online</h4>
             <ul className="rightbarFriendsList">
-            <li className="rightbarFriend">
-              <div className="rightbarPicContainer">
-                <img src="../../resources/users/Hsu.jpg" alt="Hsu" className="rightbarProfilePic" />
-                <span className="righbarOnlineStatus"></span>
-              </div>
-              <span className="rightbarUsername">Hsu Xing</span>
-            </li>  
-            </ul> 
-            <ul className="rightbarFriendsList">
-            <li className="rightbarFriend">
-              <div className="rightbarPicContainer">
-                <img src="../../resources/users/Hsu.jpg" alt="Hsu" className="rightbarProfilePic" />
-                <span className="righbarOnlineStatus"></span>
-              </div>
-              <span className="rightbarUsername">Hsu Xing</span>
-            </li>  
-            </ul> 
-            <ul className="rightbarFriendsList">
-            <li className="rightbarFriend">
-              <div className="rightbarPicContainer">
-                <img src="../../resources/users/Hsu.jpg" alt="Hsu" className="rightbarProfilePic" />
-                <span className="righbarOnlineStatus"></span>
-              </div>
-              <span className="rightbarUsername">Hsu Xing</span>
-            </li>  
-            </ul> 
-            <ul className="rightbarFriendsList">
-            <li className="rightbarFriend">
-              <div className="rightbarPicContainer">
-                <img src="../../resources/users/Hsu.jpg" alt="Hsu" className="rightbarProfilePic" />
-                <span className="righbarOnlineStatus"></span>
-              </div>
-              <span className="rightbarUsername">Hsu Xing</span>
-            </li>  
+                {Users.map((u)=>(
+                  <Online key={u.id} user={u}/>
+                ))}
             </ul> 
         </div>
     </div>
