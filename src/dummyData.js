@@ -55,7 +55,7 @@ export const Users = [
     {
       id: 1,
       desc: "Love For All, Hatred For None.",
-      photo: "../../resources/images/IMG_1.jpg",
+      photo: "../../resources/images/IMG_10.jpg",
       date: "5 mins ago",
       userId: 1,
       like: 32,
@@ -130,7 +130,7 @@ export const Users = [
     },
     {
       id: 10,
-      photo: "../../resources/images/IMG_10.jpg",
+      photo: "../../resources/images/IMG_1.jpg",
       date: "1 week ago",
       userId: 10,
       like: 104,

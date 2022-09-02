@@ -1,12 +1,25 @@
 import "./posts.css"
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import {Users} from "../../dummyData"
-import {useState} from "react"
+// import {Users} from "../../dummyData"
+import {useState, useEffect} from "react"
+import axios from "axios"
+import {format} from "timeago.js"
+import {Link} from "react-router-dom"
 
 export default function Posts({post}) {
  
-const [like, setLike] = useState(post.like)  
+const [like, setLike] = useState(post.likes.length)  
 const [isLiked, setIsLiked] = useState(false)
+const [user, setUser] = useState({})
+
+useEffect(()=>{
+  const fetchUsers = async () =>{
+  const res = await axios.get(`http://localhost:8800/api/users/${post.userId}`)
+    setUser(res.data)
+}
+  fetchUsers()
+}, [post.userId]);
+//seemed adding this dependency was not necessary?
 
 const likeHandler =()=>{
   setLike(isLiked ? like-1 : like+1)
@@ -18,9 +31,11 @@ const likeHandler =()=>{
         <div className="postWrapper">
           <div className="postTop">
             <div className="postTopLeft">
-              <img className="postProfilePic" src={Users.filter((u)=> u.id === post.userId)[0].profilePicture} alt="Raul"/>
-              <span className="postUsername">{Users.filter((u)=> u.id === post?.userId)[0].username}</span>
-              <span className="postDate">{post.date}</span>
+              <Link to={`profile/${user.username}`}>
+              <img className="postProfilePic" src={user.profilePicture || "../../resources/picture/bailey.jpg"} alt="Raul"/>
+              </Link>
+              <span className="postUsername">{user.username}</span>
+              <span className="postDate">{format(post.createdAt)}</span>
             </div>
             <div className="postTopRight">
               <MoreVertIcon/>
@@ -28,7 +43,8 @@ const likeHandler =()=>{
           </div>
           <div className="postCenter">
             <span className="postText">{post?.desc}</span>
-            <img className="postPic" src={post.photo} alt="books"/>
+            <img className="postPic" src={post.img || "../../resources/images/IMG_10.jpg"} alt="books"/>
+
           </div>
           <div className="postBottom">
             <div className="postBottomLeft">
