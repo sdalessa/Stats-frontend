@@ -10,13 +10,14 @@ const [posts, setPosts] = useState([])
 
 useEffect(()=>{
   const fetchPosts = async () =>{
+
   const res = username
-  ? await axios.get("http://localhost:8800/api/posts/profile/all/"+username)
-  : await axios.get("http://localhost:8800/api/posts/timeline/all/62ffa26b217fc610250523a2")
+  ? await axios.get("http://localhost:8800/api/posts/profile/"+username)
+  : await axios.get("http://localhost:8800/api/posts/timeline/62ffa26b217fc610250523a2")
     setPosts(res.data)
 }
   fetchPosts()
-}, []);
+}, [username]);
 
   return (
     <div className="feeds">
